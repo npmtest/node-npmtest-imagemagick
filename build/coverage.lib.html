@@ -1,5 +1,7 @@
-<html lang="en"><head>
-    <title>Code coverage report for node-npmtest-imagemagick/imagemagick/imagemagick.js</title>
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for node-npmtest-imagemagick/node_modules/imagemagick/imagemagick.js</title>
     <meta charset="utf-8">
     <style>
         body, html {
@@ -192,7 +194,7 @@
     <h1 style="font-weight: bold;">
         <a href="https://github.com/npmtest/node-npmtest-imagemagick">npmtest-imagemagick (v0.0.1)</a>
     </h1>
-    <h1>Code coverage report for <span class="entity">node-npmtest-imagemagick/imagemagick/imagemagick.js</span></h1>
+    <h1>Code coverage report for <span class="entity">node-npmtest-imagemagick/node_modules/imagemagick/imagemagick.js</span></h1>
     <h2>
         
         Statements: <span class="metric">6.11% <small>(16 / 262)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
@@ -208,11 +210,11 @@
         
         Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
     </h2>
-    <div class="path"><a href="../../index.html">All files</a> » <a href="index.html">node-npmtest-imagemagick/imagemagick/</a> » imagemagick.js</div>
+    <div class="path"><a href="../../../index.html">All files</a> &#187; <a href="index.html">node-npmtest-imagemagick/node_modules/imagemagick/</a> &#187; imagemagick.js</div>
 </div>
 <div class="body">
 <pre><table class="coverage">
-<tbody><tr><td class="line-count">1
+<tr><td class="line-count">1
 2
 3
 4
@@ -1048,192 +1050,192 @@
     EventEmitter = require('events').EventEmitter;
 &nbsp;
 &nbsp;
-<span class="fstat-no" title="function not covered">function exec2(file, args /*, options, callback */) {</span>
-<span class="cstat-no" title="statement not covered">  var options = { encoding: 'utf8'</span>
+<span class="fstat-no" title="function not covered" >function exec2(file, args /*, options, callback */) {</span>
+<span class="cstat-no" title="statement not covered" >  var options = { encoding: 'utf8'</span>
                 , timeout: 0
                 , maxBuffer: 500*1024
                 , killSignal: 'SIGKILL'
                 , output: null
                 };
 &nbsp;
-<span class="cstat-no" title="statement not covered">  var callback = arguments[arguments.length-1];</span>
-<span class="cstat-no" title="statement not covered">  if ('function' != typeof callback) <span class="cstat-no" title="statement not covered">callback = null;</span></span>
+<span class="cstat-no" title="statement not covered" >  var callback = arguments[arguments.length-1];</span>
+<span class="cstat-no" title="statement not covered" >  if ('function' != typeof callback) <span class="cstat-no" title="statement not covered" >callback = null;</span></span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">  if (typeof arguments[2] == 'object') {</span>
-<span class="cstat-no" title="statement not covered">    var keys = Object.keys(options);</span>
-<span class="cstat-no" title="statement not covered">    for (var i = 0; i &lt; keys.length; i++) {</span>
-<span class="cstat-no" title="statement not covered">      var k = keys[i];</span>
-<span class="cstat-no" title="statement not covered">      if (arguments[2][k] !== undefined) <span class="cstat-no" title="statement not covered">options[k] = arguments[2][k];</span></span>
+<span class="cstat-no" title="statement not covered" >  if (typeof arguments[2] == 'object') {</span>
+<span class="cstat-no" title="statement not covered" >    var keys = Object.keys(options);</span>
+<span class="cstat-no" title="statement not covered" >    for (var i = 0; i &lt; keys.length; i++) {</span>
+<span class="cstat-no" title="statement not covered" >      var k = keys[i];</span>
+<span class="cstat-no" title="statement not covered" >      if (arguments[2][k] !== undefined) <span class="cstat-no" title="statement not covered" >options[k] = arguments[2][k];</span></span>
     }
   }
 &nbsp;
-<span class="cstat-no" title="statement not covered">  var child = childproc.spawn(file, args);</span>
-<span class="cstat-no" title="statement not covered">  var killed = false;</span>
-<span class="cstat-no" title="statement not covered">  var timedOut = false;</span>
+<span class="cstat-no" title="statement not covered" >  var child = childproc.spawn(file, args);</span>
+<span class="cstat-no" title="statement not covered" >  var killed = false;</span>
+<span class="cstat-no" title="statement not covered" >  var timedOut = false;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">  var Wrapper = <span class="fstat-no" title="function not covered">function(proc) {</span></span>
-<span class="cstat-no" title="statement not covered">    this.proc = proc;</span>
-<span class="cstat-no" title="statement not covered">    this.stderr = new Accumulator();</span>
-<span class="cstat-no" title="statement not covered">    proc.emitter = new EventEmitter();</span>
-<span class="cstat-no" title="statement not covered">    proc.on = proc.emitter.on.bind(proc.emitter);</span>
-<span class="cstat-no" title="statement not covered">    this.out = proc.emitter.emit.bind(proc.emitter, 'data');</span>
-<span class="cstat-no" title="statement not covered">    this.err = this.stderr.out.bind(this.stderr);</span>
-<span class="cstat-no" title="statement not covered">    this.errCurrent = this.stderr.current.bind(this.stderr);</span>
+<span class="cstat-no" title="statement not covered" >  var Wrapper = <span class="fstat-no" title="function not covered" >function(proc) {</span></span>
+<span class="cstat-no" title="statement not covered" >    this.proc = proc;</span>
+<span class="cstat-no" title="statement not covered" >    this.stderr = new Accumulator();</span>
+<span class="cstat-no" title="statement not covered" >    proc.emitter = new EventEmitter();</span>
+<span class="cstat-no" title="statement not covered" >    proc.on = proc.emitter.on.bind(proc.emitter);</span>
+<span class="cstat-no" title="statement not covered" >    this.out = proc.emitter.emit.bind(proc.emitter, 'data');</span>
+<span class="cstat-no" title="statement not covered" >    this.err = this.stderr.out.bind(this.stderr);</span>
+<span class="cstat-no" title="statement not covered" >    this.errCurrent = this.stderr.current.bind(this.stderr);</span>
   };
-<span class="cstat-no" title="statement not covered">  Wrapper.prototype.finish = <span class="fstat-no" title="function not covered">function(err) {</span></span>
-<span class="cstat-no" title="statement not covered">    this.proc.emitter.emit('end', err, this.errCurrent());</span>
+<span class="cstat-no" title="statement not covered" >  Wrapper.prototype.finish = <span class="fstat-no" title="function not covered" >function(err) {</span></span>
+<span class="cstat-no" title="statement not covered" >    this.proc.emitter.emit('end', err, this.errCurrent());</span>
   };
 &nbsp;
-<span class="cstat-no" title="statement not covered">  var Accumulator = <span class="fstat-no" title="function not covered">function(cb) {</span></span>
-<span class="cstat-no" title="statement not covered">    this.stdout = {contents: ""};</span>
-<span class="cstat-no" title="statement not covered">    this.stderr = {contents: ""};</span>
-<span class="cstat-no" title="statement not covered">    this.callback = cb;</span>
+<span class="cstat-no" title="statement not covered" >  var Accumulator = <span class="fstat-no" title="function not covered" >function(cb) {</span></span>
+<span class="cstat-no" title="statement not covered" >    this.stdout = {contents: ""};</span>
+<span class="cstat-no" title="statement not covered" >    this.stderr = {contents: ""};</span>
+<span class="cstat-no" title="statement not covered" >    this.callback = cb;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">    var limitedWrite = <span class="fstat-no" title="function not covered">function(stream) {</span></span>
-<span class="cstat-no" title="statement not covered">      return <span class="fstat-no" title="function not covered">function(chunk) {</span></span>
-<span class="cstat-no" title="statement not covered">        stream.contents += chunk;</span>
-<span class="cstat-no" title="statement not covered">        if (!killed &amp;&amp; stream.contents.length &gt; options.maxBuffer) {</span>
-<span class="cstat-no" title="statement not covered">          child.kill(options.killSignal);</span>
-<span class="cstat-no" title="statement not covered">          killed = true;</span>
+<span class="cstat-no" title="statement not covered" >    var limitedWrite = <span class="fstat-no" title="function not covered" >function(stream) {</span></span>
+<span class="cstat-no" title="statement not covered" >      return <span class="fstat-no" title="function not covered" >function(chunk) {</span></span>
+<span class="cstat-no" title="statement not covered" >        stream.contents += chunk;</span>
+<span class="cstat-no" title="statement not covered" >        if (!killed &amp;&amp; stream.contents.length &gt; options.maxBuffer) {</span>
+<span class="cstat-no" title="statement not covered" >          child.kill(options.killSignal);</span>
+<span class="cstat-no" title="statement not covered" >          killed = true;</span>
         }
       };
     };
-<span class="cstat-no" title="statement not covered">    this.out = limitedWrite(this.stdout);</span>
-<span class="cstat-no" title="statement not covered">    this.err = limitedWrite(this.stderr);</span>
+<span class="cstat-no" title="statement not covered" >    this.out = limitedWrite(this.stdout);</span>
+<span class="cstat-no" title="statement not covered" >    this.err = limitedWrite(this.stderr);</span>
   };
-<span class="cstat-no" title="statement not covered">  Accumulator.prototype.current = <span class="fstat-no" title="function not covered">function() {</span> <span class="cstat-no" title="statement not covered">return this.stdout.contents; </span>};</span>
-<span class="cstat-no" title="statement not covered">  Accumulator.prototype.errCurrent = <span class="fstat-no" title="function not covered">function() {</span> <span class="cstat-no" title="statement not covered">return this.stderr.contents; </span>};</span>
-<span class="cstat-no" title="statement not covered">  Accumulator.prototype.finish = <span class="fstat-no" title="function not covered">function(err) {</span> <span class="cstat-no" title="statement not covered">this.callback(err, this.stdout.contents, this.stderr.contents); </span>};</span>
+<span class="cstat-no" title="statement not covered" >  Accumulator.prototype.current = <span class="fstat-no" title="function not covered" >function() {</span> <span class="cstat-no" title="statement not covered" >return this.stdout.contents; </span>};</span>
+<span class="cstat-no" title="statement not covered" >  Accumulator.prototype.errCurrent = <span class="fstat-no" title="function not covered" >function() {</span> <span class="cstat-no" title="statement not covered" >return this.stderr.contents; </span>};</span>
+<span class="cstat-no" title="statement not covered" >  Accumulator.prototype.finish = <span class="fstat-no" title="function not covered" >function(err) {</span> <span class="cstat-no" title="statement not covered" >this.callback(err, this.stdout.contents, this.stderr.contents); </span>};</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">  var std = callback ? new Accumulator(callback) : new Wrapper(child);</span>
+<span class="cstat-no" title="statement not covered" >  var std = callback ? new Accumulator(callback) : new Wrapper(child);</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">  var timeoutId;</span>
-<span class="cstat-no" title="statement not covered">  if (options.timeout &gt; 0) {</span>
-<span class="cstat-no" title="statement not covered">    timeoutId = setTimeout(<span class="fstat-no" title="function not covered">function () {</span></span>
-<span class="cstat-no" title="statement not covered">      if (!killed) {</span>
-<span class="cstat-no" title="statement not covered">        child.kill(options.killSignal);</span>
-<span class="cstat-no" title="statement not covered">        timedOut = true;</span>
-<span class="cstat-no" title="statement not covered">        killed = true;</span>
-<span class="cstat-no" title="statement not covered">        timeoutId = null;</span>
+<span class="cstat-no" title="statement not covered" >  var timeoutId;</span>
+<span class="cstat-no" title="statement not covered" >  if (options.timeout &gt; 0) {</span>
+<span class="cstat-no" title="statement not covered" >    timeoutId = setTimeout(<span class="fstat-no" title="function not covered" >function () {</span></span>
+<span class="cstat-no" title="statement not covered" >      if (!killed) {</span>
+<span class="cstat-no" title="statement not covered" >        child.kill(options.killSignal);</span>
+<span class="cstat-no" title="statement not covered" >        timedOut = true;</span>
+<span class="cstat-no" title="statement not covered" >        killed = true;</span>
+<span class="cstat-no" title="statement not covered" >        timeoutId = null;</span>
       }
     }, options.timeout);
   }
 &nbsp;
-<span class="cstat-no" title="statement not covered">  child.stdout.setEncoding(options.encoding);</span>
-<span class="cstat-no" title="statement not covered">  child.stderr.setEncoding(options.encoding);</span>
+<span class="cstat-no" title="statement not covered" >  child.stdout.setEncoding(options.encoding);</span>
+<span class="cstat-no" title="statement not covered" >  child.stderr.setEncoding(options.encoding);</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">  child.stdout.addListener("data", <span class="fstat-no" title="function not covered">function (chunk) {</span> <span class="cstat-no" title="statement not covered">std.out(chunk, options.encoding); </span>});</span>
-<span class="cstat-no" title="statement not covered">  child.stderr.addListener("data", <span class="fstat-no" title="function not covered">function (chunk) {</span> <span class="cstat-no" title="statement not covered">std.err(chunk, options.encoding); </span>});</span>
+<span class="cstat-no" title="statement not covered" >  child.stdout.addListener("data", <span class="fstat-no" title="function not covered" >function (chunk) {</span> <span class="cstat-no" title="statement not covered" >std.out(chunk, options.encoding); </span>});</span>
+<span class="cstat-no" title="statement not covered" >  child.stderr.addListener("data", <span class="fstat-no" title="function not covered" >function (chunk) {</span> <span class="cstat-no" title="statement not covered" >std.err(chunk, options.encoding); </span>});</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">  var version = process.versions.node.split('.');</span>
-<span class="cstat-no" title="statement not covered">  child.addListener(version[0] == 0 &amp;&amp; version[1] &lt; 7 ? "exit" : "close", <span class="fstat-no" title="function not covered">function (code, signal) {</span></span>
-<span class="cstat-no" title="statement not covered">    if (timeoutId) <span class="cstat-no" title="statement not covered">clearTimeout(timeoutId);</span></span>
-<span class="cstat-no" title="statement not covered">    if (code === 0 &amp;&amp; signal === null) {</span>
-<span class="cstat-no" title="statement not covered">      std.finish(null);</span>
+<span class="cstat-no" title="statement not covered" >  var version = process.versions.node.split('.');</span>
+<span class="cstat-no" title="statement not covered" >  child.addListener(version[0] == 0 &amp;&amp; version[1] &lt; 7 ? "exit" : "close", <span class="fstat-no" title="function not covered" >function (code, signal) {</span></span>
+<span class="cstat-no" title="statement not covered" >    if (timeoutId) <span class="cstat-no" title="statement not covered" >clearTimeout(timeoutId);</span></span>
+<span class="cstat-no" title="statement not covered" >    if (code === 0 &amp;&amp; signal === null) {</span>
+<span class="cstat-no" title="statement not covered" >      std.finish(null);</span>
     } else {
-<span class="cstat-no" title="statement not covered">      var e = new Error("Command "+(timedOut ? "timed out" : "failed")+": " + std.errCurrent());</span>
-<span class="cstat-no" title="statement not covered">      e.timedOut = timedOut;</span>
-<span class="cstat-no" title="statement not covered">      e.killed = killed;</span>
-<span class="cstat-no" title="statement not covered">      e.code = code;</span>
-<span class="cstat-no" title="statement not covered">      e.signal = signal;</span>
-<span class="cstat-no" title="statement not covered">      std.finish(e);</span>
+<span class="cstat-no" title="statement not covered" >      var e = new Error("Command "+(timedOut ? "timed out" : "failed")+": " + std.errCurrent());</span>
+<span class="cstat-no" title="statement not covered" >      e.timedOut = timedOut;</span>
+<span class="cstat-no" title="statement not covered" >      e.killed = killed;</span>
+<span class="cstat-no" title="statement not covered" >      e.code = code;</span>
+<span class="cstat-no" title="statement not covered" >      e.signal = signal;</span>
+<span class="cstat-no" title="statement not covered" >      std.finish(e);</span>
     }
   });
 &nbsp;
-<span class="cstat-no" title="statement not covered">  return child;</span>
+<span class="cstat-no" title="statement not covered" >  return child;</span>
 };
 &nbsp;
 &nbsp;
-<span class="fstat-no" title="function not covered">function parseIdentify(input) {</span>
-<span class="cstat-no" title="statement not covered">  var lines = input.split("\n"),</span>
+<span class="fstat-no" title="function not covered" >function parseIdentify(input) {</span>
+<span class="cstat-no" title="statement not covered" >  var lines = input.split("\n"),</span>
       prop = {},
       props = [prop],
       prevIndent = 0,
       indents = [indent],
       currentLine, comps, indent, i;
 &nbsp;
-<span class="cstat-no" title="statement not covered">  lines.shift(); </span>//drop first line (Image: name.jpg)
+<span class="cstat-no" title="statement not covered" >  lines.shift(); </span>//drop first line (Image: name.jpg)
 &nbsp;
-<span class="cstat-no" title="statement not covered">  for (i in lines) {</span>
-<span class="cstat-no" title="statement not covered">    currentLine = lines[i];</span>
-<span class="cstat-no" title="statement not covered">    indent = currentLine.search(/\S/);</span>
-<span class="cstat-no" title="statement not covered">    if (indent &gt;= 0) {</span>
-<span class="cstat-no" title="statement not covered">      comps = currentLine.split(': ');</span>
-<span class="cstat-no" title="statement not covered">      if (indent &gt; prevIndent) <span class="cstat-no" title="statement not covered">indents.push(indent);</span></span>
-<span class="cstat-no" title="statement not covered">      while (indent &lt; prevIndent &amp;&amp; props.length) {</span>
-<span class="cstat-no" title="statement not covered">        indents.pop();</span>
-<span class="cstat-no" title="statement not covered">        prop = props.pop();</span>
-<span class="cstat-no" title="statement not covered">        prevIndent = indents[indents.length - 1];</span>
+<span class="cstat-no" title="statement not covered" >  for (i in lines) {</span>
+<span class="cstat-no" title="statement not covered" >    currentLine = lines[i];</span>
+<span class="cstat-no" title="statement not covered" >    indent = currentLine.search(/\S/);</span>
+<span class="cstat-no" title="statement not covered" >    if (indent &gt;= 0) {</span>
+<span class="cstat-no" title="statement not covered" >      comps = currentLine.split(': ');</span>
+<span class="cstat-no" title="statement not covered" >      if (indent &gt; prevIndent) <span class="cstat-no" title="statement not covered" >indents.push(indent);</span></span>
+<span class="cstat-no" title="statement not covered" >      while (indent &lt; prevIndent &amp;&amp; props.length) {</span>
+<span class="cstat-no" title="statement not covered" >        indents.pop();</span>
+<span class="cstat-no" title="statement not covered" >        prop = props.pop();</span>
+<span class="cstat-no" title="statement not covered" >        prevIndent = indents[indents.length - 1];</span>
       }
-<span class="cstat-no" title="statement not covered">      if (comps.length &lt; 2) {</span>
-<span class="cstat-no" title="statement not covered">        props.push(prop);</span>
-<span class="cstat-no" title="statement not covered">        prop = prop[currentLine.split(':')[0].trim().toLowerCase()] = {};</span>
+<span class="cstat-no" title="statement not covered" >      if (comps.length &lt; 2) {</span>
+<span class="cstat-no" title="statement not covered" >        props.push(prop);</span>
+<span class="cstat-no" title="statement not covered" >        prop = prop[currentLine.split(':')[0].trim().toLowerCase()] = {};</span>
       } else {
-<span class="cstat-no" title="statement not covered">        prop[comps[0].trim().toLowerCase()] = comps[1].trim()</span>
+<span class="cstat-no" title="statement not covered" >        prop[comps[0].trim().toLowerCase()] = comps[1].trim()</span>
       }
-<span class="cstat-no" title="statement not covered">      prevIndent = indent;</span>
+<span class="cstat-no" title="statement not covered" >      prevIndent = indent;</span>
     }
   }
-<span class="cstat-no" title="statement not covered">  return prop;</span>
+<span class="cstat-no" title="statement not covered" >  return prop;</span>
 };
 &nbsp;
-exports.identify = <span class="fstat-no" title="function not covered">function(pathOrArgs, callback) {</span>
-<span class="cstat-no" title="statement not covered">  var isCustom = Array.isArray(pathOrArgs),</span>
+exports.identify = <span class="fstat-no" title="function not covered" >function(pathOrArgs, callback) {</span>
+<span class="cstat-no" title="statement not covered" >  var isCustom = Array.isArray(pathOrArgs),</span>
       isData,
       args = isCustom ? ([]).concat(pathOrArgs) : ['-verbose', pathOrArgs];
 &nbsp;
-<span class="cstat-no" title="statement not covered">  if (typeof args[args.length-1] === 'object') {</span>
-<span class="cstat-no" title="statement not covered">    isData = true;</span>
-<span class="cstat-no" title="statement not covered">    pathOrArgs = args[args.length-1];</span>
-<span class="cstat-no" title="statement not covered">    args[args.length-1] = '-';</span>
-<span class="cstat-no" title="statement not covered">    if (!pathOrArgs.data)</span>
-<span class="cstat-no" title="statement not covered">      throw new Error('first argument is missing the "data" member');</span>
-  } else <span class="cstat-no" title="statement not covered">if (typeof pathOrArgs === 'function') {</span>
-<span class="cstat-no" title="statement not covered">    args[args.length-1] = '-';</span>
-<span class="cstat-no" title="statement not covered">    callback = pathOrArgs;</span>
+<span class="cstat-no" title="statement not covered" >  if (typeof args[args.length-1] === 'object') {</span>
+<span class="cstat-no" title="statement not covered" >    isData = true;</span>
+<span class="cstat-no" title="statement not covered" >    pathOrArgs = args[args.length-1];</span>
+<span class="cstat-no" title="statement not covered" >    args[args.length-1] = '-';</span>
+<span class="cstat-no" title="statement not covered" >    if (!pathOrArgs.data)</span>
+<span class="cstat-no" title="statement not covered" >      throw new Error('first argument is missing the "data" member');</span>
+  } else <span class="cstat-no" title="statement not covered" >if (typeof pathOrArgs === 'function') {</span>
+<span class="cstat-no" title="statement not covered" >    args[args.length-1] = '-';</span>
+<span class="cstat-no" title="statement not covered" >    callback = pathOrArgs;</span>
   }
-<span class="cstat-no" title="statement not covered">  var proc = exec2(exports.identify.path, args, {timeout:120000}, <span class="fstat-no" title="function not covered">function(err, stdout, stderr) {</span></span>
-<span class="cstat-no" title="statement not covered">    var result, geometry;</span>
-<span class="cstat-no" title="statement not covered">    if (!err) {</span>
-<span class="cstat-no" title="statement not covered">      if (isCustom) {</span>
-<span class="cstat-no" title="statement not covered">        result = stdout;</span>
+<span class="cstat-no" title="statement not covered" >  var proc = exec2(exports.identify.path, args, {timeout:120000}, <span class="fstat-no" title="function not covered" >function(err, stdout, stderr) {</span></span>
+<span class="cstat-no" title="statement not covered" >    var result, geometry;</span>
+<span class="cstat-no" title="statement not covered" >    if (!err) {</span>
+<span class="cstat-no" title="statement not covered" >      if (isCustom) {</span>
+<span class="cstat-no" title="statement not covered" >        result = stdout;</span>
       } else {
-<span class="cstat-no" title="statement not covered">        result = parseIdentify(stdout);</span>
-<span class="cstat-no" title="statement not covered">        geometry = result['geometry'].split(/x/);</span>
+<span class="cstat-no" title="statement not covered" >        result = parseIdentify(stdout);</span>
+<span class="cstat-no" title="statement not covered" >        geometry = result['geometry'].split(/x/);</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">        result.format = result.format.match(/\S*/)[0]</span>
-<span class="cstat-no" title="statement not covered">        result.width = parseInt(geometry[0]);</span>
-<span class="cstat-no" title="statement not covered">        result.height = parseInt(geometry[1]);</span>
-<span class="cstat-no" title="statement not covered">        result.depth = parseInt(result.depth);</span>
-<span class="cstat-no" title="statement not covered">        if (result.quality !== undefined) <span class="cstat-no" title="statement not covered">result.quality = parseInt(result.quality) / 100;</span></span>
+<span class="cstat-no" title="statement not covered" >        result.format = result.format.match(/\S*/)[0]</span>
+<span class="cstat-no" title="statement not covered" >        result.width = parseInt(geometry[0]);</span>
+<span class="cstat-no" title="statement not covered" >        result.height = parseInt(geometry[1]);</span>
+<span class="cstat-no" title="statement not covered" >        result.depth = parseInt(result.depth);</span>
+<span class="cstat-no" title="statement not covered" >        if (result.quality !== undefined) <span class="cstat-no" title="statement not covered" >result.quality = parseInt(result.quality) / 100;</span></span>
       }
     }
-<span class="cstat-no" title="statement not covered">    callback(err, result);</span>
+<span class="cstat-no" title="statement not covered" >    callback(err, result);</span>
   });
-<span class="cstat-no" title="statement not covered">  if (isData) {</span>
-<span class="cstat-no" title="statement not covered">    if ('string' === typeof pathOrArgs.data) {</span>
-<span class="cstat-no" title="statement not covered">      proc.stdin.setEncoding('binary');</span>
-<span class="cstat-no" title="statement not covered">      proc.stdin.write(pathOrArgs.data, 'binary');</span>
-<span class="cstat-no" title="statement not covered">      proc.stdin.end();</span>
+<span class="cstat-no" title="statement not covered" >  if (isData) {</span>
+<span class="cstat-no" title="statement not covered" >    if ('string' === typeof pathOrArgs.data) {</span>
+<span class="cstat-no" title="statement not covered" >      proc.stdin.setEncoding('binary');</span>
+<span class="cstat-no" title="statement not covered" >      proc.stdin.write(pathOrArgs.data, 'binary');</span>
+<span class="cstat-no" title="statement not covered" >      proc.stdin.end();</span>
     } else {
-<span class="cstat-no" title="statement not covered">      proc.stdin.end(pathOrArgs.data);</span>
+<span class="cstat-no" title="statement not covered" >      proc.stdin.end(pathOrArgs.data);</span>
     }
   }
-<span class="cstat-no" title="statement not covered">  return proc;</span>
+<span class="cstat-no" title="statement not covered" >  return proc;</span>
 }
 exports.identify.path = 'identify';
 &nbsp;
-<span class="fstat-no" title="function not covered">function ExifDate(value) {</span>
+<span class="fstat-no" title="function not covered" >function ExifDate(value) {</span>
   // YYYY:MM:DD HH:MM:SS -&gt; Date(YYYY-MM-DD HH:MM:SS +0000)
-<span class="cstat-no" title="statement not covered">  value = value.split(/ /);</span>
-<span class="cstat-no" title="statement not covered">  return new Date(value[0].replace(/:/g, '-')+' '+</span>
+<span class="cstat-no" title="statement not covered" >  value = value.split(/ /);</span>
+<span class="cstat-no" title="statement not covered" >  return new Date(value[0].replace(/:/g, '-')+' '+</span>
     value[1]+' +0000');
 }
 &nbsp;
-<span class="fstat-no" title="function not covered">function exifKeyName(k) {</span>
-<span class="cstat-no" title="statement not covered">  return k.replace(exifKeyName.RE, <span class="fstat-no" title="function not covered">function(x){</span></span>
-<span class="cstat-no" title="statement not covered">    if (x.length === 1) <span class="cstat-no" title="statement not covered">return x.toLowerCase();</span></span>
-    else <span class="cstat-no" title="statement not covered">return x.substr(0,x.length-1).toLowerCase()+x.substr(x.length-1);</span>
+<span class="fstat-no" title="function not covered" >function exifKeyName(k) {</span>
+<span class="cstat-no" title="statement not covered" >  return k.replace(exifKeyName.RE, <span class="fstat-no" title="function not covered" >function(x){</span></span>
+<span class="cstat-no" title="statement not covered" >    if (x.length === 1) <span class="cstat-no" title="statement not covered" >return x.toLowerCase();</span></span>
+    else <span class="cstat-no" title="statement not covered" >return x.substr(0,x.length-1).toLowerCase()+x.substr(x.length-1);</span>
   });
 }
 exifKeyName.RE = /^[A-Z]+/;
@@ -1258,130 +1260,130 @@ var exifFieldConverters = {
   dateTime:ExifDate, dateTimeDigitized:ExifDate, dateTimeOriginal:ExifDate
 };
 &nbsp;
-exports.readMetadata = <span class="fstat-no" title="function not covered">function(path, callback) {</span>
-<span class="cstat-no" title="statement not covered">  return exports.identify(['-format', '%[EXIF:*]', path], <span class="fstat-no" title="function not covered">function(err, stdout) {</span></span>
-<span class="cstat-no" title="statement not covered">    var meta = {};</span>
-<span class="cstat-no" title="statement not covered">    if (!err) {</span>
-<span class="cstat-no" title="statement not covered">      stdout.split(/\n/).forEach(<span class="fstat-no" title="function not covered">function(line){</span></span>
-<span class="cstat-no" title="statement not covered">        var eq_p = line.indexOf('=');</span>
-<span class="cstat-no" title="statement not covered">        if (eq_p === -1) <span class="cstat-no" title="statement not covered">return;</span></span>
-<span class="cstat-no" title="statement not covered">        var key = line.substr(0, eq_p).replace('/','-'),</span>
+exports.readMetadata = <span class="fstat-no" title="function not covered" >function(path, callback) {</span>
+<span class="cstat-no" title="statement not covered" >  return exports.identify(['-format', '%[EXIF:*]', path], <span class="fstat-no" title="function not covered" >function(err, stdout) {</span></span>
+<span class="cstat-no" title="statement not covered" >    var meta = {};</span>
+<span class="cstat-no" title="statement not covered" >    if (!err) {</span>
+<span class="cstat-no" title="statement not covered" >      stdout.split(/\n/).forEach(<span class="fstat-no" title="function not covered" >function(line){</span></span>
+<span class="cstat-no" title="statement not covered" >        var eq_p = line.indexOf('=');</span>
+<span class="cstat-no" title="statement not covered" >        if (eq_p === -1) <span class="cstat-no" title="statement not covered" >return;</span></span>
+<span class="cstat-no" title="statement not covered" >        var key = line.substr(0, eq_p).replace('/','-'),</span>
             value = line.substr(eq_p+1).trim(),
             typekey = 'default';
-<span class="cstat-no" title="statement not covered">        var p = key.indexOf(':');</span>
-<span class="cstat-no" title="statement not covered">        if (p !== -1) {</span>
-<span class="cstat-no" title="statement not covered">          typekey = key.substr(0, p);</span>
-<span class="cstat-no" title="statement not covered">          key = key.substr(p+1);</span>
-<span class="cstat-no" title="statement not covered">          if (typekey === 'exif') {</span>
-<span class="cstat-no" title="statement not covered">            key = exifKeyName(key);</span>
-<span class="cstat-no" title="statement not covered">            var converter = exifFieldConverters[key];</span>
-<span class="cstat-no" title="statement not covered">            if (converter) <span class="cstat-no" title="statement not covered">value = converter(value);</span></span>
+<span class="cstat-no" title="statement not covered" >        var p = key.indexOf(':');</span>
+<span class="cstat-no" title="statement not covered" >        if (p !== -1) {</span>
+<span class="cstat-no" title="statement not covered" >          typekey = key.substr(0, p);</span>
+<span class="cstat-no" title="statement not covered" >          key = key.substr(p+1);</span>
+<span class="cstat-no" title="statement not covered" >          if (typekey === 'exif') {</span>
+<span class="cstat-no" title="statement not covered" >            key = exifKeyName(key);</span>
+<span class="cstat-no" title="statement not covered" >            var converter = exifFieldConverters[key];</span>
+<span class="cstat-no" title="statement not covered" >            if (converter) <span class="cstat-no" title="statement not covered" >value = converter(value);</span></span>
           }
         }
-<span class="cstat-no" title="statement not covered">        if (!(typekey in meta)) <span class="cstat-no" title="statement not covered">meta[typekey] = {key:value};</span></span>
-        else <span class="cstat-no" title="statement not covered">meta[typekey][key] = value;</span>
+<span class="cstat-no" title="statement not covered" >        if (!(typekey in meta)) <span class="cstat-no" title="statement not covered" >meta[typekey] = {key:value};</span></span>
+        else <span class="cstat-no" title="statement not covered" >meta[typekey][key] = value;</span>
       })
     }
-<span class="cstat-no" title="statement not covered">    callback(err, meta);</span>
+<span class="cstat-no" title="statement not covered" >    callback(err, meta);</span>
   });
 }
 &nbsp;
-exports.convert = <span class="fstat-no" title="function not covered">function(args, timeout, callback) {</span>
-<span class="cstat-no" title="statement not covered">  var procopt = {encoding: 'binary'};</span>
-<span class="cstat-no" title="statement not covered">  if (typeof timeout === 'function') {</span>
-<span class="cstat-no" title="statement not covered">    callback = timeout;</span>
-<span class="cstat-no" title="statement not covered">    timeout = 0;</span>
-  } else <span class="cstat-no" title="statement not covered">if (typeof timeout !== 'number') {</span>
-<span class="cstat-no" title="statement not covered">    timeout = 0;</span>
+exports.convert = <span class="fstat-no" title="function not covered" >function(args, timeout, callback) {</span>
+<span class="cstat-no" title="statement not covered" >  var procopt = {encoding: 'binary'};</span>
+<span class="cstat-no" title="statement not covered" >  if (typeof timeout === 'function') {</span>
+<span class="cstat-no" title="statement not covered" >    callback = timeout;</span>
+<span class="cstat-no" title="statement not covered" >    timeout = 0;</span>
+  } else <span class="cstat-no" title="statement not covered" >if (typeof timeout !== 'number') {</span>
+<span class="cstat-no" title="statement not covered" >    timeout = 0;</span>
   }
-<span class="cstat-no" title="statement not covered">  if (timeout &amp;&amp; (timeout = parseInt(timeout)) &gt; 0 &amp;&amp; !isNaN(timeout))</span>
-<span class="cstat-no" title="statement not covered">    procopt.timeout = timeout;</span>
-<span class="cstat-no" title="statement not covered">  return exec2(exports.convert.path, args, procopt, callback);</span>
+<span class="cstat-no" title="statement not covered" >  if (timeout &amp;&amp; (timeout = parseInt(timeout)) &gt; 0 &amp;&amp; !isNaN(timeout))</span>
+<span class="cstat-no" title="statement not covered" >    procopt.timeout = timeout;</span>
+<span class="cstat-no" title="statement not covered" >  return exec2(exports.convert.path, args, procopt, callback);</span>
 }
 exports.convert.path = 'convert';
 &nbsp;
-var resizeCall = <span class="fstat-no" title="function not covered">function(t, callback) {</span>
-<span class="cstat-no" title="statement not covered">  var proc = exports.convert(t.args, t.opt.timeout, callback);</span>
-<span class="cstat-no" title="statement not covered">  if (t.opt.srcPath.match(/-$/)) {</span>
-<span class="cstat-no" title="statement not covered">    if ('string' === typeof t.opt.srcData) {</span>
-<span class="cstat-no" title="statement not covered">      proc.stdin.setEncoding('binary');</span>
-<span class="cstat-no" title="statement not covered">      proc.stdin.write(t.opt.srcData, 'binary');</span>
-<span class="cstat-no" title="statement not covered">      proc.stdin.end();</span>
+var resizeCall = <span class="fstat-no" title="function not covered" >function(t, callback) {</span>
+<span class="cstat-no" title="statement not covered" >  var proc = exports.convert(t.args, t.opt.timeout, callback);</span>
+<span class="cstat-no" title="statement not covered" >  if (t.opt.srcPath.match(/-$/)) {</span>
+<span class="cstat-no" title="statement not covered" >    if ('string' === typeof t.opt.srcData) {</span>
+<span class="cstat-no" title="statement not covered" >      proc.stdin.setEncoding('binary');</span>
+<span class="cstat-no" title="statement not covered" >      proc.stdin.write(t.opt.srcData, 'binary');</span>
+<span class="cstat-no" title="statement not covered" >      proc.stdin.end();</span>
     } else {
-<span class="cstat-no" title="statement not covered">      proc.stdin.end(t.opt.srcData);</span>
+<span class="cstat-no" title="statement not covered" >      proc.stdin.end(t.opt.srcData);</span>
     }
   }
-<span class="cstat-no" title="statement not covered">  return proc;</span>
+<span class="cstat-no" title="statement not covered" >  return proc;</span>
 }
 &nbsp;
-exports.resize = <span class="fstat-no" title="function not covered">function(options, callback) {</span>
-<span class="cstat-no" title="statement not covered">  var t = exports.resizeArgs(options);</span>
-<span class="cstat-no" title="statement not covered">  return resizeCall(t, callback)</span>
+exports.resize = <span class="fstat-no" title="function not covered" >function(options, callback) {</span>
+<span class="cstat-no" title="statement not covered" >  var t = exports.resizeArgs(options);</span>
+<span class="cstat-no" title="statement not covered" >  return resizeCall(t, callback)</span>
 }
 &nbsp;
-exports.crop = <span class="fstat-no" title="function not covered">function (options, callback) {</span>
-<span class="cstat-no" title="statement not covered">  if (typeof options !== 'object')</span>
-<span class="cstat-no" title="statement not covered">    throw new TypeError('First argument must be an object');</span>
-<span class="cstat-no" title="statement not covered">  if (!options.srcPath &amp;&amp; !options.srcData)</span>
-<span class="cstat-no" title="statement not covered">    throw new TypeError("No srcPath or data defined");</span>
-<span class="cstat-no" title="statement not covered">  if (!options.height &amp;&amp; !options.width)</span>
-<span class="cstat-no" title="statement not covered">    throw new TypeError("No width or height defined");</span>
+exports.crop = <span class="fstat-no" title="function not covered" >function (options, callback) {</span>
+<span class="cstat-no" title="statement not covered" >  if (typeof options !== 'object')</span>
+<span class="cstat-no" title="statement not covered" >    throw new TypeError('First argument must be an object');</span>
+<span class="cstat-no" title="statement not covered" >  if (!options.srcPath &amp;&amp; !options.srcData)</span>
+<span class="cstat-no" title="statement not covered" >    throw new TypeError("No srcPath or data defined");</span>
+<span class="cstat-no" title="statement not covered" >  if (!options.height &amp;&amp; !options.width)</span>
+<span class="cstat-no" title="statement not covered" >    throw new TypeError("No width or height defined");</span>
   
-<span class="cstat-no" title="statement not covered">  if (options.srcPath){</span>
-<span class="cstat-no" title="statement not covered">    var args = options.srcPath;</span>
+<span class="cstat-no" title="statement not covered" >  if (options.srcPath){</span>
+<span class="cstat-no" title="statement not covered" >    var args = options.srcPath;</span>
   } else {
-<span class="cstat-no" title="statement not covered">    var args = {</span>
+<span class="cstat-no" title="statement not covered" >    var args = {</span>
       data: options.srcData
     };
   }
 &nbsp;
-<span class="cstat-no" title="statement not covered">  exports.identify(args, <span class="fstat-no" title="function not covered">function(err, meta) {</span></span>
-<span class="cstat-no" title="statement not covered">    if (err) <span class="cstat-no" title="statement not covered">return callback &amp;&amp; callback(err);</span></span>
-<span class="cstat-no" title="statement not covered">    var t         = exports.resizeArgs(options),</span>
+<span class="cstat-no" title="statement not covered" >  exports.identify(args, <span class="fstat-no" title="function not covered" >function(err, meta) {</span></span>
+<span class="cstat-no" title="statement not covered" >    if (err) <span class="cstat-no" title="statement not covered" >return callback &amp;&amp; callback(err);</span></span>
+<span class="cstat-no" title="statement not covered" >    var t         = exports.resizeArgs(options),</span>
         ignoreArg = false,
         printNext  = false,
         args      = [];
-<span class="cstat-no" title="statement not covered">    t.args.forEach(<span class="fstat-no" title="function not covered">function (arg) {</span></span>
-<span class="cstat-no" title="statement not covered">      if (printNext === true){</span>
-<span class="cstat-no" title="statement not covered">        console.log("arg", arg);</span>
-<span class="cstat-no" title="statement not covered">        printNext = false;</span>
+<span class="cstat-no" title="statement not covered" >    t.args.forEach(<span class="fstat-no" title="function not covered" >function (arg) {</span></span>
+<span class="cstat-no" title="statement not covered" >      if (printNext === true){</span>
+<span class="cstat-no" title="statement not covered" >        console.log("arg", arg);</span>
+<span class="cstat-no" title="statement not covered" >        printNext = false;</span>
       }
       // ignoreArg is set when resize flag was found
-<span class="cstat-no" title="statement not covered">      if (!ignoreArg &amp;&amp; (arg != '-resize'))</span>
-<span class="cstat-no" title="statement not covered">        args.push(arg);</span>
+<span class="cstat-no" title="statement not covered" >      if (!ignoreArg &amp;&amp; (arg != '-resize'))</span>
+<span class="cstat-no" title="statement not covered" >        args.push(arg);</span>
       // found resize flag! ignore the next argument
-<span class="cstat-no" title="statement not covered">      if (arg == '-resize'){</span>
-<span class="cstat-no" title="statement not covered">        console.log("resize arg");</span>
-<span class="cstat-no" title="statement not covered">        ignoreArg = true;</span>
-<span class="cstat-no" title="statement not covered">        printNext = true;</span>
+<span class="cstat-no" title="statement not covered" >      if (arg == '-resize'){</span>
+<span class="cstat-no" title="statement not covered" >        console.log("resize arg");</span>
+<span class="cstat-no" title="statement not covered" >        ignoreArg = true;</span>
+<span class="cstat-no" title="statement not covered" >        printNext = true;</span>
       }
-<span class="cstat-no" title="statement not covered">      if (arg === "-crop"){</span>
-<span class="cstat-no" title="statement not covered">        console.log("crop arg");</span>
-<span class="cstat-no" title="statement not covered">        printNext = true;</span>
+<span class="cstat-no" title="statement not covered" >      if (arg === "-crop"){</span>
+<span class="cstat-no" title="statement not covered" >        console.log("crop arg");</span>
+<span class="cstat-no" title="statement not covered" >        printNext = true;</span>
       }
       // found the argument after the resize flag; ignore it and set crop options
-<span class="cstat-no" title="statement not covered">      if ((arg != "-resize") &amp;&amp; ignoreArg) {</span>
-<span class="cstat-no" title="statement not covered">        var dSrc      = meta.width / meta.height,</span>
+<span class="cstat-no" title="statement not covered" >      if ((arg != "-resize") &amp;&amp; ignoreArg) {</span>
+<span class="cstat-no" title="statement not covered" >        var dSrc      = meta.width / meta.height,</span>
             dDst      = t.opt.width / t.opt.height,
             resizeTo  = (dSrc &lt; dDst) ? ''+t.opt.width+'x' : 'x'+t.opt.height,
             dGravity  = options.gravity ? options.gravity : "Center";
-<span class="cstat-no" title="statement not covered">        args = args.concat([</span>
+<span class="cstat-no" title="statement not covered" >        args = args.concat([</span>
           '-resize', resizeTo,
           '-gravity', dGravity,
           '-crop', ''+t.opt.width + 'x' + t.opt.height + '+0+0',
           '+repage'
         ]);
-<span class="cstat-no" title="statement not covered">        ignoreArg = false;</span>
+<span class="cstat-no" title="statement not covered" >        ignoreArg = false;</span>
       }
     })
 &nbsp;
-<span class="cstat-no" title="statement not covered">    t.args = args;</span>
-<span class="cstat-no" title="statement not covered">    resizeCall(t, callback);</span>
+<span class="cstat-no" title="statement not covered" >    t.args = args;</span>
+<span class="cstat-no" title="statement not covered" >    resizeCall(t, callback);</span>
   })
 }
 &nbsp;
-exports.resizeArgs = <span class="fstat-no" title="function not covered">function(options) {</span>
-<span class="cstat-no" title="statement not covered">  var opt = {</span>
+exports.resizeArgs = <span class="fstat-no" title="function not covered" >function(options) {</span>
+<span class="cstat-no" title="statement not covered" >  var opt = {</span>
     srcPath: null,
     srcData: null,
     srcFormat: null,
@@ -1400,72 +1402,71 @@ exports.resizeArgs = <span class="fstat-no" title="function not covered">functio
   }
 &nbsp;
   // check options
-<span class="cstat-no" title="statement not covered">  if (typeof options !== 'object')</span>
-<span class="cstat-no" title="statement not covered">    throw new Error('first argument must be an object');</span>
-<span class="cstat-no" title="statement not covered">  for (var k in opt) <span class="cstat-no" title="statement not covered">if (k in options) <span class="cstat-no" title="statement not covered">opt[k] = options[k];</span></span></span>
-<span class="cstat-no" title="statement not covered">  if (!opt.srcPath &amp;&amp; !opt.srcData)</span>
-<span class="cstat-no" title="statement not covered">    throw new Error('both srcPath and srcData are empty');</span>
+<span class="cstat-no" title="statement not covered" >  if (typeof options !== 'object')</span>
+<span class="cstat-no" title="statement not covered" >    throw new Error('first argument must be an object');</span>
+<span class="cstat-no" title="statement not covered" >  for (var k in opt) <span class="cstat-no" title="statement not covered" >if (k in options) <span class="cstat-no" title="statement not covered" >opt[k] = options[k];</span></span></span>
+<span class="cstat-no" title="statement not covered" >  if (!opt.srcPath &amp;&amp; !opt.srcData)</span>
+<span class="cstat-no" title="statement not covered" >    throw new Error('both srcPath and srcData are empty');</span>
 &nbsp;
   // normalize options
-<span class="cstat-no" title="statement not covered">  if (!opt.format) <span class="cstat-no" title="statement not covered">opt.format = 'jpg';</span></span>
-<span class="cstat-no" title="statement not covered">  if (!opt.srcPath) {</span>
-<span class="cstat-no" title="statement not covered">    opt.srcPath = (opt.srcFormat ? opt.srcFormat +':-' : '-'); </span>// stdin
+<span class="cstat-no" title="statement not covered" >  if (!opt.format) <span class="cstat-no" title="statement not covered" >opt.format = 'jpg';</span></span>
+<span class="cstat-no" title="statement not covered" >  if (!opt.srcPath) {</span>
+<span class="cstat-no" title="statement not covered" >    opt.srcPath = (opt.srcFormat ? opt.srcFormat +':-' : '-'); </span>// stdin
   }
-<span class="cstat-no" title="statement not covered">  if (!opt.dstPath)</span>
-<span class="cstat-no" title="statement not covered">    opt.dstPath = (opt.format ? opt.format+':-' : '-'); </span>// stdout
-<span class="cstat-no" title="statement not covered">  if (opt.width === 0 &amp;&amp; opt.height === 0)</span>
-<span class="cstat-no" title="statement not covered">    throw new Error('both width and height can not be 0 (zero)');</span>
+<span class="cstat-no" title="statement not covered" >  if (!opt.dstPath)</span>
+<span class="cstat-no" title="statement not covered" >    opt.dstPath = (opt.format ? opt.format+':-' : '-'); </span>// stdout
+<span class="cstat-no" title="statement not covered" >  if (opt.width === 0 &amp;&amp; opt.height === 0)</span>
+<span class="cstat-no" title="statement not covered" >    throw new Error('both width and height can not be 0 (zero)');</span>
 &nbsp;
   // build args
-<span class="cstat-no" title="statement not covered">  var args = [opt.srcPath];</span>
-<span class="cstat-no" title="statement not covered">  if (opt.sharpening &gt; 0) {</span>
-<span class="cstat-no" title="statement not covered">    args = args.concat([</span>
+<span class="cstat-no" title="statement not covered" >  var args = [opt.srcPath];</span>
+<span class="cstat-no" title="statement not covered" >  if (opt.sharpening &gt; 0) {</span>
+<span class="cstat-no" title="statement not covered" >    args = args.concat([</span>
       '-set', 'option:filter:blur', String(1.0-opt.sharpening)]);
   }
-<span class="cstat-no" title="statement not covered">  if (opt.filter) {</span>
-<span class="cstat-no" title="statement not covered">    args.push('-filter');</span>
-<span class="cstat-no" title="statement not covered">    args.push(opt.filter);</span>
+<span class="cstat-no" title="statement not covered" >  if (opt.filter) {</span>
+<span class="cstat-no" title="statement not covered" >    args.push('-filter');</span>
+<span class="cstat-no" title="statement not covered" >    args.push(opt.filter);</span>
   }
-<span class="cstat-no" title="statement not covered">  if (opt.strip) {</span>
-<span class="cstat-no" title="statement not covered">    args.push('-strip');</span>
+<span class="cstat-no" title="statement not covered" >  if (opt.strip) {</span>
+<span class="cstat-no" title="statement not covered" >    args.push('-strip');</span>
   }
-<span class="cstat-no" title="statement not covered">  if (opt.width || opt.height) {</span>
-<span class="cstat-no" title="statement not covered">    args.push('-resize');</span>
-<span class="cstat-no" title="statement not covered">    if (opt.height === 0) <span class="cstat-no" title="statement not covered">args.push(String(opt.width));</span></span>
-    else <span class="cstat-no" title="statement not covered">if (opt.width === 0) <span class="cstat-no" title="statement not covered">args.push('x'+String(opt.height));</span></span>
-    else <span class="cstat-no" title="statement not covered">args.push(String(opt.width)+'x'+String(opt.height));</span>
+<span class="cstat-no" title="statement not covered" >  if (opt.width || opt.height) {</span>
+<span class="cstat-no" title="statement not covered" >    args.push('-resize');</span>
+<span class="cstat-no" title="statement not covered" >    if (opt.height === 0) <span class="cstat-no" title="statement not covered" >args.push(String(opt.width));</span></span>
+    else <span class="cstat-no" title="statement not covered" >if (opt.width === 0) <span class="cstat-no" title="statement not covered" >args.push('x'+String(opt.height));</span></span>
+    else <span class="cstat-no" title="statement not covered" >args.push(String(opt.width)+'x'+String(opt.height));</span>
   }
-<span class="cstat-no" title="statement not covered">  opt.format = opt.format.toLowerCase();</span>
-<span class="cstat-no" title="statement not covered">  var isJPEG = (opt.format === 'jpg' || opt.format === 'jpeg');</span>
-<span class="cstat-no" title="statement not covered">  if (isJPEG &amp;&amp; opt.progressive) {</span>
-<span class="cstat-no" title="statement not covered">    args.push('-interlace');</span>
-<span class="cstat-no" title="statement not covered">    args.push('plane');</span>
+<span class="cstat-no" title="statement not covered" >  opt.format = opt.format.toLowerCase();</span>
+<span class="cstat-no" title="statement not covered" >  var isJPEG = (opt.format === 'jpg' || opt.format === 'jpeg');</span>
+<span class="cstat-no" title="statement not covered" >  if (isJPEG &amp;&amp; opt.progressive) {</span>
+<span class="cstat-no" title="statement not covered" >    args.push('-interlace');</span>
+<span class="cstat-no" title="statement not covered" >    args.push('plane');</span>
   }
-<span class="cstat-no" title="statement not covered">  if (isJPEG || opt.format === 'png') {</span>
-<span class="cstat-no" title="statement not covered">    args.push('-quality');</span>
-<span class="cstat-no" title="statement not covered">    args.push(Math.round(opt.quality * 100.0).toString());</span>
+<span class="cstat-no" title="statement not covered" >  if (isJPEG || opt.format === 'png') {</span>
+<span class="cstat-no" title="statement not covered" >    args.push('-quality');</span>
+<span class="cstat-no" title="statement not covered" >    args.push(Math.round(opt.quality * 100.0).toString());</span>
   }
-  else <span class="cstat-no" title="statement not covered">if (opt.format === 'miff' || opt.format === 'mif') {</span>
-<span class="cstat-no" title="statement not covered">    args.push('-quality');</span>
-<span class="cstat-no" title="statement not covered">    args.push(Math.round(opt.quality * 9.0).toString());</span>
+  else <span class="cstat-no" title="statement not covered" >if (opt.format === 'miff' || opt.format === 'mif') {</span>
+<span class="cstat-no" title="statement not covered" >    args.push('-quality');</span>
+<span class="cstat-no" title="statement not covered" >    args.push(Math.round(opt.quality * 9.0).toString());</span>
   }
-<span class="cstat-no" title="statement not covered">  if (opt.colorspace) {</span>
-<span class="cstat-no" title="statement not covered">    args.push('-colorspace');</span>
-<span class="cstat-no" title="statement not covered">    args.push(opt.colorspace);</span>
+<span class="cstat-no" title="statement not covered" >  if (opt.colorspace) {</span>
+<span class="cstat-no" title="statement not covered" >    args.push('-colorspace');</span>
+<span class="cstat-no" title="statement not covered" >    args.push(opt.colorspace);</span>
   }
-<span class="cstat-no" title="statement not covered">  if (Array.isArray(opt.customArgs) &amp;&amp; opt.customArgs.length)</span>
-<span class="cstat-no" title="statement not covered">    args = args.concat(opt.customArgs);</span>
-<span class="cstat-no" title="statement not covered">  args.push(opt.dstPath);</span>
+<span class="cstat-no" title="statement not covered" >  if (Array.isArray(opt.customArgs) &amp;&amp; opt.customArgs.length)</span>
+<span class="cstat-no" title="statement not covered" >    args = args.concat(opt.customArgs);</span>
+<span class="cstat-no" title="statement not covered" >  args.push(opt.dstPath);</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">  return {opt:opt, args:args};</span>
+<span class="cstat-no" title="statement not covered" >  return {opt:opt, args:args};</span>
 }
 &nbsp;
 &nbsp;</pre></td></tr>
-</tbody></table></pre>
+</table></pre>
 </div>
 <div class="footer">
-    <div class="meta">Generated by <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a> at Tue Apr 11 2017 15:25:55 GMT+0000 (UTC)</div>
+    <div class="meta">Generated by <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a> at Tue Apr 18 2017 17:29:09 GMT+0000 (UTC)</div>
 </div>
-
-
-</body></html>
+</body>
+</html>
